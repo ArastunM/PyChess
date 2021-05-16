@@ -1,7 +1,9 @@
 # PyChess
 Basic Chess app developed using Python. The Project primarily makes 
-use of the Python Kivy package for the GUI. It provides a 2-player Chess 
-interface as well as a Training mode to improve mouse movement/click speed.
+use of the Python Kivy package for the GUI. 
+
+It provides a 2-player Chess 
+interface as well as a Training mode to improve mouse movement and click speed.
 
 ## Prerequisites
 [Python version 3.8](https://www.python.org/downloads/release/python-380/) 
