@@ -10,7 +10,7 @@ interface as well as a Training mode to improve mouse movement and click speed.
 was used for development
 
 ## Installation
-Use [pip](https://pip.pypa.io/en/stable/) to install the following Python Kivy related packages:
+Use [pip](https://pip.pypa.io/en/stable/) to install the following Python **Kivy** related packages:
 
 ```bash
 pip install Kivy
