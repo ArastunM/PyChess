@@ -1,0 +1,626 @@
+<Entry>
+    name: "Ent"
+
+    back_c: 1, 1, 1, 1
+    b_color: .2, .5, .6, 1
+
+    b1: b1
+
+    canvas:
+        Color:
+            rgb: root.back_c
+
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+
+    FloatLayout:
+        cols: 2
+
+        Button:
+            id: b1
+            text: "2 Players"
+            font_size: (root.width**2 + root.height**2) / 14**4
+            size_hint: 0.5, 0.1
+            pos_hint: {"center_x":0.5, "top":0.61}
+            color: root.b_color
+            background_normal: "images/ent_button.png"
+            background_down: "images/ent_button.png"
+            on_press: root.p2_opacity()
+            on_release:
+                root.manager.transition.direction = 'down'
+                root.manager.current = 'CH'
+
+        Button:
+            text: "Training"
+            font_size: (root.width**2 + root.height**2) / 14**4
+            size_hint: 0.5, 0.1
+            pos_hint: {"center_x":0.5, "top":0.5}
+            color: root.b_color
+            background_normal: "images/ent_button.png"
+            background_down: "images/ent_button.png"
+            on_release:
+                root.manager.transition.direction = 'down'
+                root.manager.current = 'clk'
+<Clicker>
+    name: "clk"
+
+    tile1: tile1
+    tile2: tile2
+    tile3: tile3
+    tile4: tile4
+    tile5: tile5
+    tile6: tile6
+    tile7: tile7
+    tile8: tile8
+    tile9: tile9
+    tile10: tile10
+    tile11: tile11
+    tile12: tile12
+
+    back_c: 1, 1, 1, 1
+    black_c: 0, 0, 0, 1
+
+
+    canvas:
+        Color:
+            rgb: root.back_c
+
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    Image:
+        source: "images/best_score.png"
+        size_hint: 0.2, 0.1
+        pos_hint: {"center_x":0.1, "top":0.18}
+        allow_stretch: True
+
+    Label:
+        id: best_score
+        font_size: 25
+        size_hint: 0.15, 0.15
+        pos_hint: {"center_x":0.2, "top":0.2}
+        color: 0, 0, 0, 1
+
+    Label:
+        id: score
+        text: "0"
+        font_size: 25
+        size_hint: 0.15, 0.15
+        pos_hint: {"center_x":0.35, "top":0.2}
+        color: 0, 0, 0, 1
+
+    Image:
+        source: "images/timer.png"
+        size_hint: 0.15, 0.15
+        pos_hint: {"center_x":0.5, "top":0.19}
+        allow_stretch: True
+
+    Label:
+        id: run_clock
+        text: "0"
+        background_normal: "images/timer.png"
+        background_down: "images/timer.png"
+        font_size: 25
+        size_hint: 0.15, 0.15
+        pos_hint: {"center_x":0.5, "top":0.2}
+        color: 0, 0, 0, 1
+
+    Button:
+        id: bmenu
+        background_normal: "images/back_menu.png"
+        background_down: "images/back_menu.png"
+        size_hint: 0.15, 0.15
+        pos_hint: {"center_x":0.9, "top":0.2}
+        on_release:
+            root.manager.transition.direction = 'down'
+            root.manager.current = 'Ent'
+
+    Button:
+        id: start
+        background_normal: "images/back_start.png"
+        background_down: "images/back_start.png"
+        size_hint: 0.15, 0.15
+        pos_hint: {"center_x":0.7, "top":0.2}
+        on_release: root.start_on()
+
+    Button:
+        id: tile1
+        size_hint: 0.25, 0.25
+        pos_hint: {"center_x":0.125, "top":0.99}
+        on_press:
+            if self.background_color == root.black_c: self.background_color = 1, 1, 1, 0
+            else: root.nullify_game()
+            root.on_press()
+
+    Button:
+        id: tile2
+        size_hint: 0.25, 0.25
+        pos_hint: {"center_x":0.375, "top":0.99}
+        on_press:
+            if self.background_color == root.black_c: self.background_color = 1, 1, 1, 0
+            else: root.nullify_game()
+            root.on_press()
+
+    Button:
+        id: tile3
+        size_hint: 0.25, 0.25
+        pos_hint: {"center_x":0.625, "top":0.99}
+        on_press:
+            if self.background_color == root.black_c: self.background_color = 1, 1, 1, 0
+            else: root.nullify_game()
+            root.on_press()
+
+    Button:
+        id: tile4
+        size_hint: 0.25, 0.25
+        pos_hint: {"center_x":0.875, "top":0.99}
+        on_press:
+            if self.background_color == root.black_c: self.background_color = 1, 1, 1, 0
+            else: root.nullify_game()
+            root.on_press()
+
+    Button:
+        id: tile5
+        size_hint: 0.25, 0.25
+        pos_hint: {"center_x":0.125, "top":0.735}
+        on_press:
+            if self.background_color == root.black_c: self.background_color = 1, 1, 1, 0
+            else: root.nullify_game()
+            root.on_press()
+
+    Button:
+        id: tile6
+        size_hint: 0.25, 0.25
+        pos_hint: {"center_x":0.375, "top":0.735}
+        on_press:
+            if self.background_color == root.black_c: self.background_color = 1, 1, 1, 0
+            else: root.nullify_game()
+            root.on_press()
+
+    Button:
+        id: tile7
+        size_hint: 0.25, 0.25
+        pos_hint: {"center_x":0.625, "top":0.735}
+        on_press:
+            if self.background_color == root.black_c: self.background_color = 1, 1, 1, 0
+            else: root.nullify_game()
+            root.on_press()
+
+    Button:
+        id: tile8
+        size_hint: 0.25, 0.25
+        pos_hint: {"center_x":0.875, "top":0.735}
+        on_press:
+            if self.background_color == root.black_c: self.background_color = 1, 1, 1, 0
+            else: root.nullify_game()
+            root.on_press()
+
+    Button:
+        id: tile9
+        size_hint: 0.25, 0.25
+        pos_hint: {"center_x":0.125, "top":0.48}
+        on_press:
+            if self.background_color == root.black_c: self.background_color = 1, 1, 1, 0
+            else: root.nullify_game()
+            root.on_press()
+
+    Button:
+        id: tile10
+        size_hint: 0.25, 0.25
+        pos_hint: {"center_x":0.375, "top":0.48}
+        on_press:
+            if self.background_color == root.black_c: self.background_color = 1, 1, 1, 0
+            else: root.nullify_game()
+            root.on_press()
+
+    Button:
+        id: tile11
+        size_hint: 0.25, 0.25
+        pos_hint: {"center_x":0.625, "top":0.48}
+        on_press:
+            if self.background_color == root.black_c: self.background_color = 1, 1, 1, 0
+            else: root.nullify_game()
+            root.on_press()
+
+    Button:
+        id: tile12
+        size_hint: 0.25, 0.25
+        pos_hint: {"center_x":0.875, "top":0.48}
+        on_press:
+            if self.background_color == root.black_c: self.background_color = 1, 1, 1, 0
+            else: root.nullify_game()
+            root.on_press()
+
+
+<ChessBoard>
+    name: "CH"
+
+    pawn1: pawn1
+    pawn2: pawn2
+    pawn3: pawn3
+    pawn4: pawn4
+    pawn5: pawn5
+    pawn6: pawn6
+    pawn7: pawn7
+    pawn8: pawn8
+
+    pawn9: pawn9
+    pawn10: pawn10
+    pawn11: pawn11
+    pawn12: pawn12
+    pawn13: pawn13
+    pawn14: pawn14
+    pawn15: pawn15
+    pawn16: pawn16
+
+    rook17: rook17
+    rook18: rook18
+    bishop21: bishop21
+    bishop22: bishop22
+    queen25: queen25
+    knight27: knight27
+    knight28: knight28
+
+    rook19: rook19
+    rook20: rook20
+    bishop23: bishop23
+    bishop24: bishop24
+    queen26: queen26
+    knight29: knight29
+    knight30: knight30
+
+    king31: king31
+    king32: king32
+
+    canvas:
+        Rectangle:
+            source: "images/chess_board.jpg"
+            size: self.size
+            pos: self.pos
+
+    FloatLayout:
+        cols: 2
+
+        Button:
+            id: check_col
+            opacity: 0
+            background_normal: "images/check.png"
+            background_down: "images/check.png"
+            size_hint: 0.12, 0.16
+            pos_hint: {"x":0.34, "y":0.035}
+
+        Button:
+            id: pawn1
+            background_normal: "images/wpawn.png"
+            background_down: "images/wpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.082, "top":0.28}
+            on_release: root.detect_fig(1, pawn1)
+
+        Button:
+            id: pawn2
+            background_normal: "images/wpawn.png"
+            background_down: "images/wpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.162, "top":0.28}
+            on_release: root.detect_fig(2, pawn2)
+
+        Button:
+            id: pawn3
+            background_normal: "images/wpawn.png"
+            background_down: "images/wpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.242, "top":0.28}
+            on_release: root.detect_fig(3, pawn3)
+
+        Button:
+            id: pawn4
+            background_normal: "images/wpawn.png"
+            background_down: "images/wpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.320, "top":0.28}
+            on_release: root.detect_fig(4, pawn4)
+
+        Button:
+            id: pawn5
+            background_normal: "images/wpawn.png"
+            background_down: "images/wpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.400, "top":0.28}
+            on_release: root.detect_fig(5, pawn5)
+
+        Button:
+            id: pawn6
+            background_normal: "images/wpawn.png"
+            background_down: "images/wpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.480, "top":0.28}
+            on_release: root.detect_fig(6, pawn6)
+
+        Button:
+            id: pawn7
+            background_normal: "images/wpawn.png"
+            background_down: "images/wpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.558, "top":0.28}
+            on_release: root.detect_fig(7, pawn7)
+
+        Button:
+            id: pawn8
+            background_normal: "images/wpawn.png"
+            background_down: "images/wpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.638, "top":0.28}
+            on_release: root.detect_fig(8, pawn8)
+
+        Button:
+            id: pawn9
+            background_normal: "images/bpawn.png"
+            background_down: "images/bpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.082, "top":0.83}
+            on_release: root.detect_fig(9, pawn9)
+
+        Button:
+            id: pawn10
+            background_normal: "images/bpawn.png"
+            background_down: "images/bpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.162, "top":0.83}
+            on_release: root.detect_fig(10, pawn10)
+
+        Button:
+            id: pawn11
+            background_normal: "images/bpawn.png"
+            background_down: "images/bpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.242, "top":0.83}
+            on_release: root.detect_fig(11, pawn11)
+
+
+        Button:
+            id: pawn12
+            background_normal: "images/bpawn.png"
+            background_down: "images/bpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.320, "top":0.83}
+            on_release: root.detect_fig(12, pawn12)
+
+        Button:
+            id: pawn13
+            background_normal: "images/bpawn.png"
+            background_down: "images/bpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.400, "top":0.83}
+            on_release: root.detect_fig(13, pawn13)
+
+        Button:
+            id: pawn14
+            background_normal: "images/bpawn.png"
+            background_down: "images/bpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.480, "top":0.83}
+            on_release: root.detect_fig(14, pawn14)
+
+        Button:
+            id: pawn15
+            background_normal: "images/bpawn.png"
+            background_down: "images/bpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.558, "top":0.83}
+            on_release: root.detect_fig(15, pawn15)
+
+        Button:
+            id: pawn16
+            background_normal: "images/bpawn.png"
+            background_down: "images/bpawn.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.638, "top":0.83}
+            on_release: root.detect_fig(16, pawn16)
+
+        Button:
+            id: rook17
+            background_normal: "images/wrook.png"
+            background_down: "images/wrook.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.082, "top":0.18}
+            on_release: root.detect_fig(17, rook17)
+
+        Button:
+            id: rook18
+            background_normal: "images/wrook.png"
+            background_down: "images/wrook.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.636, "top":0.18}
+            on_release: root.detect_fig(18, rook18)
+
+        Button:
+            id: rook19
+            background_normal: "images/brook.png"
+            background_down: "images/brook.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.082, "top":0.95}
+            on_release: root.detect_fig(19, rook19)
+
+        Button:
+            id: rook20
+            background_normal: "images/brook.png"
+            background_down: "images/brook.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"center_x":0.636, "top":0.95}
+            on_release: root.detect_fig(20, rook20)
+
+        Button:
+            id: bishop21
+            background_normal: "images/wbishop.png"
+            background_down: "images/wbishop.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"x":0.198, "y":0.055}
+            on_release: root.detect_fig(21, bishop21)
+
+        Button:
+            id: bishop22
+            background_normal: "images/wbishop.png"
+            background_down: "images/wbishop.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"x":0.434, "y":0.055}
+            on_release: root.detect_fig(22, bishop22)
+
+        Button:
+            id: bishop23
+            background_normal: "images/bbishop.png"
+            background_down: "images/bbishop.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"x":0.198, "y":0.825}
+            on_release: root.detect_fig(23, bishop23)
+
+        Button:
+            id: bishop24
+            background_normal: "images/bbishop.png"
+            background_down: "images/bbishop.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"x":0.434, "y":0.825}
+            on_release: root.detect_fig(24, bishop24)
+
+        Button:
+            id: queen25
+            background_normal: "images/wqueen.png"
+            background_down: "images/wqueen.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"x":0.276, "y":0.055}
+            on_release: root.detect_fig(25, queen25)
+
+        Button:
+            id: queen26
+            background_normal: "images/bqueen.png"
+            background_down: "images/bqueen.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"x":0.276, "y":0.825}
+            on_release: root.detect_fig(26, queen26)
+
+        Button:
+            id: knight27
+            background_normal: "images/wknight.png"
+            background_down: "images/wknight.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"x":0.119, "y":0.055}
+            on_release: root.detect_fig(27, knight27)
+
+        Button:
+            id: knight28
+            background_normal: "images/wknight.png"
+            background_down: "images/wknight.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"x":0.513, "y":0.055}
+            on_release: root.detect_fig(28, knight28)
+
+        Button:
+            id: knight29
+            background_normal: "images/bknight.png"
+            background_down: "images/bknight.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"x":0.119, "y":0.825}
+            on_release: root.detect_fig(29, knight29)
+
+        Button:
+            id: knight30
+            background_normal: "images/bknight.png"
+            background_down: "images/bknight.png"
+            size_hint: 0.085, 0.12
+            pos_hint: {"x":0.513, "y":0.825}
+            on_release: root.detect_fig(30, knight30)
+
+        Button:
+            id: king31
+            background_normal: "images/wking.png"
+            background_down: "images/wking.png"
+            size_hint: 0.08, 0.12
+            pos_hint: {"x":0.357, "y":0.055}
+            on_release: root.detect_fig(31, king31)
+
+        Button:
+            id: king32
+            background_normal: "images/bking.png"
+            background_down: "images/bking.png"
+            size_hint: 0.08, 0.12
+            pos_hint: {"x":0.357, "y":0.825}
+            on_release: root.detect_fig(32, king32)
+
+        Spinner:
+            id: queen_opt
+            opacity: 0
+            values: ["Queen", "Rook", "Bishop", "Knight"]
+            font_size: (root.width**2 + root.height**1.95) / 14**4
+            pos_hint: {"x": 1, "y": 1}
+            size_hint: 0.085, 0.12
+            on_text: root.on_queening(self.text)
+
+
+        FloatLayout:
+
+            Image:
+                source: "images/gamemode_bg.png"
+                size_hint: 0.2, 0.2
+                pos_hint: {"center_x":0.845, "top":1.02}
+                allow_stretch: True
+
+            Button:
+                id: b_rand
+                text: "2 Players"
+                font_name: 'RobotoMono-Regular.ttf'
+                size_hint: 0.16, 0.06
+                pos_hint: {"center_x":0.85, "top":0.84}
+
+            Button:
+                id: b_2p
+                text: "Random Engine"
+                font_name: 'RobotoMono-Regular.ttf'
+                size_hint: 0.16, 0.06
+                pos_hint: {"center_x":0.85, "top":0.78}
+
+            Image:
+                id: whitemove
+                opacity: 1
+                source: "images/whitemove.png"
+                size_hint: 0.08, 0.08
+                pos_hint: {"center_x":0.8, "top":0.49}
+                allow_stretch: True
+
+            Image:
+                id: blackmove
+                opacity: 0.2
+                source: "images/blackmove.png"
+                size_hint: 0.08, 0.08
+                pos_hint: {"center_x":0.8, "top":0.59}
+                allow_stretch: True
+
+            Button:
+                id: reset_game
+                background_normal: "images/reload_pos.png"
+                background_down: "images/reload_pos.png"
+                size_hint: 0.075, 0.09
+                pos_hint: {"center_x":0.9, "top":0.59}
+                on_release: root.act_current_pos("load_start")
+
+            Button:
+                id: sound_cont
+                background_normal: "images/sound_on.png"
+                background_down: "images/sound_on.png"
+                size_hint: 0.075, 0.1
+                pos_hint: {"center_x":0.9, "top":0.49}
+                on_release: root.sound_control()
+
+            Button:
+                id: bmenu
+                background_normal: "images/back_menu.png"
+                background_down: "images/back_menu.png"
+                size_hint: 0.09, 0.11
+                pos_hint: {"center_x":0.8, "top":0.15}
+                on_press: root.bmenu_opacity()
+                on_release:
+                    root.manager.transition.direction = 'down'
+                    root.manager.current = 'Ent'
+
