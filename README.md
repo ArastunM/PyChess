@@ -33,4 +33,4 @@ for the audio and images to be accessible
 
 ## Details
 - Author - Arastun Mammadli
-- License - [MIT](LICENSE.txt)
+- License - [MIT](LICENSE)
