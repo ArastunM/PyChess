@@ -28,7 +28,8 @@ pip install urllib3
 ## Getting Started
 The modules/files can be downloaded from the [GitHub repository](https://github.com/ArastunM/PyChess.git)
 
-The files **p_main** and **kv** should be placed in the same directory as **audio** and **image** folders
+The files inside **src** folder should be in the same directory as **audio** and **images** folders 
+for the audio and images to be accessible
 
 ## Details
 - Author - Arastun Mammadli
